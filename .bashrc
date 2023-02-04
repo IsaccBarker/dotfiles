@@ -10,8 +10,8 @@ alias vim=nvim
 function get_cowfile() {
     dir=""
 
-    if [ -d /usr/share/cowsay/cows ]; then
-        dir=/usr/share/cowsay/cows
+    if [ -d /usr/share/cows ]; then
+        dir=/usr/share/cows
     else
         dir=$(ls -d /nix/store/* | grep "cowsay-" | sed -n 2p)/share/cowsay/cows
     fi
