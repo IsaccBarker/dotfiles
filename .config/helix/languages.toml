@@ -1,0 +1,22 @@
+[[language]]
+name = "rust"
+auto-format = true
+
+[language.config]
+rust-analyzer = { cargo = { target = "x86_64-unknown-none" } }
+checkOnSave = { extraArgs = ["--target-dir", "/tmp/rust-analyzer-check"] }
+
+[[language]]
+name = "gas"
+scope = "source.llvm"
+roots = ["Makefile"]
+file-types = ["S", "s"]
+comment-token = "#"
+indent = { tab-width = 1, unit = "    " }
+language-server = { command = "asm-lsp" }
+auto-format = false
+
+[[grammar]]
+name = "gas"
+source = { git = "https://github.com/example/mylang", rev = "a250c4582510ff34767ec3b7dcdd3c24e8c8aa68" }
+
