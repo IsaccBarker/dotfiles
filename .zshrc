@@ -1,9 +1,9 @@
 export BASH_SILENCE_DEPRECATION_WARNING=1
-export PS1='\e[37;1m[\u@\h \W]$ \e[0m'
+export PROMPT="[%n@%m %~]$ " # PS1='\e[37;1m[\u@\h \W]$ \e[0m'
 export EDITOR=nvim
 export PATH="$PATH:$HOME/Developer/opt/cross/bin:$HOME/bin:$HOME/.local/bin"
 # Let tmux see the terminal databse on MacOS Ventura.
-export TERM=screen-256color
+export TERM=xterm-256color
 
 alias vim=nvim
 
