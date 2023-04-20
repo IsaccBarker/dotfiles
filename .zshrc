@@ -1,6 +1,7 @@
 export PROMPT="[%n@%m %~]$ " # PS1='\e[37;1m[\u@\h \W]$ \e[0m'
 export EDITOR=nvim
 export PATH="$PATH:$HOME/Developer/opt/cross/bin:$HOME/bin:$HOME/.local/bin"
+export GOPATH="$HOME/.local/go"
 # Let tmux see the terminal databse on MacOS Ventura.
 export TERM=xterm-256color
 
@@ -16,12 +17,18 @@ function fun_aliases() {
     alias backgammon="telnet fibs.com 4321"
 }
 
-function do_neofetch_if_avail() {
-    if type "neofetch" > /dev/null; then
-        neofetch
-    fi
+function do_nvm() {
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+}
+
+function do_welcome() {
+    echo "Welcome. If you are intruder, please log out now."
+    echo
+    echo "\"Threading future through the past... There is no reason to believe.\""
 }
 
 fun_aliases
-do_neofetch_if_avail
-
+do_nvm
+do_welcome
