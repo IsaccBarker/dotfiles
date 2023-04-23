@@ -1,0 +1,4 @@
+/Users/milo/.emacs.d/elpa/vterm-20230417.424/build/CMakeFiles/vterm-module.dir
+/Users/milo/.emacs.d/elpa/vterm-20230417.424/build/CMakeFiles/run.dir
+/Users/milo/.emacs.d/elpa/vterm-20230417.424/build/CMakeFiles/edit_cache.dir
+/Users/milo/.emacs.d/elpa/vterm-20230417.424/build/CMakeFiles/rebuild_cache.dir

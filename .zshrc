@@ -1,9 +1,11 @@
 export PROMPT="[%n@%m %~]$ " # PS1='\e[37;1m[\u@\h \W]$ \e[0m'
 export EDITOR=nvim
-export PATH="$PATH:$HOME/Developer/opt/cross/bin:$HOME/bin:$HOME/.local/bin"
+export PATH="$PATH:/opt/local/bin:$HOME/Developer/opt/cross/bin:$HOME/bin:$HOME/.local/bin"
 export GOPATH="$HOME/.local/go"
 # Let tmux see the terminal databse on MacOS Ventura.
 export TERM=xterm-256color
+# Weird macOS behaviour
+export SHELL=$(which zsh)
 
 alias vim=nvim
 
@@ -23,6 +25,12 @@ function do_nvm() {
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 }
 
+function do_xmake() {
+    if [ -d "$HOME/.xmake" ]; then
+        source $HOME/.xmake/profile
+    fi
+}
+
 function do_welcome() {
     echo "Welcome. If you are intruder, please log out now."
     echo
@@ -31,4 +39,5 @@ function do_welcome() {
 
 fun_aliases
 do_nvm
+do_xmake
 do_welcome
